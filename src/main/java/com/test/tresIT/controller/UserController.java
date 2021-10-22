@@ -26,23 +26,24 @@ public class UserController {
 	UserService userService;
 
 	@GetMapping("/users")
-	public ResponseEntity<List<UserDTO>> getAllUsers() {
+	public ResponseEntity<List<UserDTO>> getAll() {
 		try {
 			List<UserDTO> users = new ArrayList<UserDTO>();
 
 			userService.findAll().forEach(users::add);
 
 			if (users.isEmpty()) {
+				System.out.println("no hay usuarios");
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
-
+			System.out.println("enviando usuarios");
 			return new ResponseEntity<>(users, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
-	@PostMapping(value = "/users", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/user", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO user) {
 		try {
 			Boolean exist = userService.existsByMail(user.getMail());

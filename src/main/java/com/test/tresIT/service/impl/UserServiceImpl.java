@@ -45,11 +45,19 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<UserDTO> findAll() {
+
 		List<UserDTO> users = new ArrayList<UserDTO>();
 		List<User> usersM = new ArrayList<User>();
+
 		userRepository.findAll().forEach(usersM::add);
-		BeanUtils.copyProperties(usersM, users);
-		
+
+		for (User user : usersM) {
+			UserDTO u = new UserDTO();
+			if (user != null) {
+				BeanUtils.copyProperties(user, u);
+				users.add(u);
+			}
+		}
 		return users;
 	}
 
