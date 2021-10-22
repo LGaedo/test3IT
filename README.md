@@ -2,7 +2,8 @@
 
 Se desarrollo con eclipse el ultimo 2021
 
-para obtener el proyecto lo bajas de git 
+#para obtener el proyecto lo bajas de git, clonas 
+git clone https://github.com/LGaedo/test3IT/tree/TEST3IT
 
 lo dejas en carpeta o workspace deseado
 
