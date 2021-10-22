@@ -11,7 +11,7 @@ abres eclipse vas a File --> Open project from file System.... --> Directory (bu
 
 ## Correr Spring Boot application
 RUN AS --> maven build y le pones spring:boot:run (el maven usado es el embebido de eclipse)
-o
+ó
 por consola dentro de carpeta proyecto utilizando comando maven (pero deberias instalar maven)
 mvn spring-boot:run
 
@@ -19,10 +19,11 @@ mvn spring-boot:run
 ## PARA VER LA BASE DE DATOS H2 (embebida)
 http://localhost:8080/h2-ui/login.do
 
-y donde dice:
+y donde dice,
+
 JDBC URL: jdbc:h2:mem:testdb
 USER NAME : sa
 password : 
-hacer click en botón connect y listo puedes entrar a la base de datos testdb y ver la tabla USER con los campos mail y tipo_musica donde mail es el id unico (pk)
+hacer click en botón 'connect' y listo puedes entrar a la base de datos testdb y ver la tabla USER con los campos mail y tipo_musica donde mail es el id unico (pk)
 
 
